@@ -34,7 +34,16 @@
         {{ end }}
       </div>
       <div class="col-lg-7 col-md-6 order-1 order-lg-2">
-        <img src="{{ .image | absURL }}" class="img-fluid" alt="">
+       <!--  <img src="{{ .image | absURL }}" class="img-fluid" alt=""> -->
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          {{ range .photoItem }}
+          <div class="{{ .class | markdownify}}">
+            <img class="d-block w-100" style="border-radius: 16px;" src="{{ .image | absURL }}" alt="{{ .event | markdownify}}" >
+          </div>
+          {{ end }}
+        </div>
+        </div>
       </div>
     </div>
   </div>
@@ -67,9 +76,9 @@
 {{ partial "cta.html" . }}
 {{ end }}
 
-<!-- material -->
-{{ if site.Data.homepage.material.enable }}
-{{ with site.Data.homepage.material }}
+<!-- team -->
+{{ if site.Data.homepage.team.enable }}
+{{ with site.Data.homepage.team }}
 <section class="section pb-0">
   <div class="container">
     <div class="row">
@@ -79,7 +88,7 @@
       </div>
     </div>
     <div class="row">
-      {{ range .materialItem }}
+      {{ range .teamMember }}
       <div class="col-lg-3 col-md-4 col-sm-6">
         <div class="card border-0 text-center">
           <img src="{{ .image | absURL }}" alt="material" class="card-img-top border-0">
@@ -95,7 +104,7 @@
 </section>
 {{ end }}
 {{ end }}
-<!-- /material -->
+<!-- /team -->
 
 <!-- advantage -->
 {{ if site.Data.homepage.advantage.enable }}
@@ -108,12 +117,12 @@
         <p class="mb-4">{{ .subtitle | markdownify }}</p>
         <ul class="list-unstyled" style="columns: 2;">
           {{ range .advantageList }}
-          <li class="mb-3"><i class="ti-arrow-circle-right text-primary mr-2"></i>{{ .listItem }}</li>
+          <li class="mb-3"><i class="ti-heart text-primary mr-2"></i>{{ .listItem }}</li>
           {{ end }}
         </ul>
       </div>
       <div class="col-md-6">
-        <img src="{{ .image | absURL}}" class="img-fluid" alt="">
+        <img src="{{ .image | absURL}}" class="img-fluid" style="padding:20%;"alt="">
       </div>
     </div>
   </div>
@@ -167,7 +176,7 @@
         {{ end }}
       </div>
       {{ range first 6 (where site.RegularPages "Type" "products") }}
-      <div class="col-lg-4 col-sm-6 mb-4">
+      <div class="col-lg-3 col-sm-6 mb-4">
         <div class="card border-0 text-center">
           <a href="{{ .Permalink }}">
             {{ range first 1 .Params.Images }}
@@ -183,10 +192,8 @@
               {{ end }}
               <span class="lead text-primary">{{ site.Params.currencySymbol }}{{ .Params.Price }}</span>
             </div>
-            <button class="snipcart-add-item btn btn-sm btn-outline-primary" data-item-id="{{ .Params.ProductID }}"
-              data-item-name="{{ .Title }}" {{ range first 1 .Params.Images }} data-item-image="{{ .image | absURL }}"
-              {{ end }} data-item-price="{{ .Params.Price }}" data-item-url="{{ .Permalink }}" data-item-description="{{ .Description }}">
-              Add to cart
+            <button onclick="location.href='{{ .Permalink }}'" class="btn btn-sm btn-outline-primary">
+              Find out More
             </button>
           </div>
         </div>
@@ -216,14 +223,6 @@
             <img src="{{ .image | absURL }}" class="client-img" alt="{{ .name | markdownify }}">
             <p class="quoted">{{ .content | markdownify }}</p>
             <h6 class="font-weight-medium">{{ .name | markdownify }}</h6>
-            <small>{{ .designation | markdownify }}</small>
-            <ul class="list-inline rating {{ .rating | lower }} mt-3">
-              <li class="list-inline-item mx-0"><i class="ti-star"></i></li>
-              <li class="list-inline-item mx-0"><i class="ti-star"></i></li>
-              <li class="list-inline-item mx-0"><i class="ti-star"></i></li>
-              <li class="list-inline-item mx-0"><i class="ti-star"></i></li>
-              <li class="list-inline-item mx-0"><i class="ti-star"></i></li>
-            </ul>
           </div>
         </div>
       </div>

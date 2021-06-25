@@ -1,11 +1,11 @@
 /*  typography */
-@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700&display=swap');
 
 body {
-  line-height: 1.4;
+  line-height: 1.5;
   font-family: $primary-font;
   -webkit-font-smoothing: antialiased;
-  font-size: 15px;
+  font-size: 20px;
   color: $text-color;
 }
 
@@ -17,33 +17,22 @@ p, .paragraph {
   font-family: $primary-font;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,h2,h3, {
   color: $text-color-dark;
   font-family: $primary-font;
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.5;
 }
 
 h1, .h1{
-  font-size: 48px;
+  font-size: 39px;
 }
 
 h2, .h2{
-  font-size: 42px;
+  font-size: 31px;
 }
 
 h3, .h3{
-  font-size: 26px;
+  font-size: 25px;
 }
 
-h4, .h4{
-  font-size: 20px;
-}
-
-h5, .h5{
-  font-size: 18px;
-}
-
-h6, .h6{
-  font-size: 14px;
-}

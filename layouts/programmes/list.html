@@ -6,7 +6,7 @@
   <div class="container">
     <div class="row">
       {{ range .Data.Pages }}
-      <div class="col-lg-4 col-sm-6 mb-4">
+      <div class="col-lg-6 col-sm-6 mb-4">
         <div class="card border-0 text-center">
           <a href="{{ .Permalink }}">
             {{ range first 1 .Params.Images }}
@@ -22,10 +22,8 @@
               {{ end }}
               <span class="lead text-primary">{{ site.Params.currencySymbol }}{{ .Params.Price }}</span>
             </div>
-            <button class="snipcart-add-item btn btn-sm btn-outline-primary" data-item-id="{{ .Params.ProductID }}"
-              data-item-name="{{ .Title }}" {{ range first 1 .Params.Images }} data-item-image="{{ .image | absURL }}"
-              {{ end }} data-item-price="{{ .Params.Price }}" data-item-url="{{ .Permalink }}" data-item-description="{{ .Description }}">
-              Add to cart
+            <button class="btn btn-sm btn-outline-primary" onclick="location.href='{{ .Permalink }}'">
+              Find out More
             </button>
           </div>
         </div>

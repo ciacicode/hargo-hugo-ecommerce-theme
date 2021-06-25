@@ -98,14 +98,17 @@ a:hover {
 }
 
 .bg-gradient {
-  background: $primary-gradient !important;
+  background: $primary-color !important;
 }
 
 .hover-shadow {
   transition: .2s ease;
+  color: $white;
 
   &:hover {
     box-shadow: 0 8px 10px rgba(33, 33, 33, .2) !important;
+    background: $secondary-color !important;
+    color: $black;
   }
 }
 
@@ -177,6 +180,14 @@ a:hover {
   border-color: $primary-color !important;
 }
 
+/* carousel */
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  width: 70%;
+  margin: auto;
+  }
+
 /* form control */
 .form-control {
   height: 50px;
@@ -194,6 +205,20 @@ textarea.form-control {
 
 .badge-primary {
   background: $primary-color;
+}
+
+
+.navbar-nav{
+  margin-left:auto;
+}
+
+.card {
+  border:0px;
+}
+
+.card-img-top {
+  width: 50%;
+  margin: auto;
 }
 
 /* nav-tab */
