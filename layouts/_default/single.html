@@ -19,10 +19,7 @@
         <section class="section pt-0">
         {{ if .Params.map.enable }}
         <div class="container">
-          <div id="map_canvas" data-latitude="{{ with .Params.map.mapLatitude }} {{ . }} {{ end }}"
-            data-longitude="{{ with .Params.map.mapLongitude }} {{ . }} {{ end }}"
-            data-marker="{{ with site.Params.mapMarker }} {{ . | absURL }} {{ end }}" data-marker-name="{{ site.Title }}">
-          </div>
+          <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCsIoX-s6pGsu0fhqv5rxIMkNQb-nzBZs8&location=46.414382,10.013988"></iframe>
         </div>
       </section>
       {{ end}}
